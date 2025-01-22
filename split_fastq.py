@@ -4,6 +4,9 @@ from Bio import SeqIO
 from Bio.Seq import Seq
 import gzip
 
+"""
+在处理大文件时速度较慢
+"""
 
 class SplitFastq:
     
