@@ -45,9 +45,9 @@ if __name__ == "__main__":
     parser.add_argument("-g", "--out_png", type=str, help="Output PNG file for plot")
     args = parser.parse_args()
     PlotFqLen(
-        Path(args.in_fq_gz).absolute, 
-        Path(args.out_xls).absolute, 
-        Path(args.out_pdf).absolute, 
-        Path(args.out_png).absolute
+        Path(args.in_fq_gz).absolute(), 
+        Path(args.out_xls).absolute(), 
+        Path(args.out_pdf).absolute(), 
+        Path(args.out_png).absolute()
     )()
     
