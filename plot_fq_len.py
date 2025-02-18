@@ -39,10 +39,15 @@ class PlotFqLen:
 # 示例使用：
 if __name__ == "__main__":
     parser = ArgumentParser(description="Plot read length distribution from a .fq.gz file")
-    parser.add_argument("in_fq_gz", type=Path, help="Input .fq.gz file")
-    parser.add_argument("out_xls", type=Path, help="Output Excel file for lengths")
-    parser.add_argument("out_pdf", type=Path, help="Output PDF file for plot")
-    parser.add_argument("out_png", type=Path, help="Output PNG file for plot")
+    parser.add_argument("-i", "--in_fq_gz", type=str, help="Input .fq.gz file")
+    parser.add_argument("-o", "--out_xls", type=str, help="Output Excel file for lengths")
+    parser.add_argument("-f", "--out_pdf", type=str, help="Output PDF file for plot")
+    parser.add_argument("-g", "--out_png", type=str, help="Output PNG file for plot")
     args = parser.parse_args()
-    PlotFqLen(args.in_fq_gz, args.out_xls, args.out_pdf, args.out_png)()
+    PlotFqLen(
+        Path(args.in_fq_gz).absolute, 
+        Path(args.out_xls).absolute, 
+        Path(args.out_pdf).absolute, 
+        Path(args.out_png).absolute
+    )()
     
